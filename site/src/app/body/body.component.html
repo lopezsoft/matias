@@ -1,0 +1,174 @@
+<section id="about" class="content-section text-center blue-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto" data-aos="fade-right">
+                <h2><strong>¿Qué es la Factura Electrónica?</strong><br></h2>
+                <p>Es, ante todo, una factura.<br>Esto significa que tiene los mismos efectos legales que una factura en<br>papel, se expide y recibe en formato electrónico, en otras palabras, es un<br>documento que soporta transacciones de venta de
+                    bienes y/o servicios y que operativamente tienen lugar a través de sistemas computacionales y/o soluciones&nbsp; informáticas permitiendo el cumplimiento de las características y condiciones&nbsp;en relación con la expedición,
+                    recibo, rechazo y conservación.<br></p>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="about" class="content-section text-center back backgorund-img-section" style="background-color: #050e5f;opacity: 1;padding: 0px;">
+    <div class="background-container">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-8 mx-auto">
+                    <h2 data-aos="fade-right" style="font-size: 24px;">&nbsp;<strong>¿Qué&nbsp;es la Factura Electrónica con validación previa a su expedición?</strong><br></h2>
+                    <p data-aos="fade-left" class="justify-ext">En esta modalidad el facturador envía el&nbsp;documento electrónico a la DIAN y en tiempo real recibe la factura validada por&nbsp;la entidad para ser entregada al adquirente.<br><br>&nbsp;La factura electrónica sólo se entenderá
+                        expedida cuando sea validada y&nbsp;entregada al adquirente. El modelo de validación previa permite verificar los&nbsp;requisitos fiscales de una <strong>Factura Electrónica</strong>, que garantiza a los&nbsp;facturadores y
+                        adquirentes los efectos tributarios. Las reglas y validaciones, pueden<br>consultarse en la <strong>Resolución 000001 enero 3 de 2019</strong>.<br><br><br><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="register" class="download-section content-section text-center" style="background-image: url(&quot;assets/img/18084-1920.jpg?h=da0564ab93bea4446e5da9e1e5cd480a&quot;);padding: 0px;">
+    <div data-aos="fade-right" style="padding: 50px 0px;background-color: rgba(255,255,255,0.34);">
+        <div class="container">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="border rounded shadow-lg d-lg-flex justify-content-lg-center align-items-lg-center" style="font-size: 20px;background-color: rgba(255,255,255,0.88);color: rgb(0,85,249);height: 72px;">pruebe nuestra api completamente gratis y sin compromiso</h1>
+
+                <form autocomplete="off" class="shadow-lg" id="form-register" (ngSubmit)="onSave()" [formGroup]="myForm">
+                    <div class="form-group">
+                        <label style="font-size: 24px;color: rgb(30,82,217);"><strong>Formulario de registro</strong></label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="company_name" formControlName="company_name"
+                            placeholder="Nombre o razón social" autocomplete="off"
+                            [class.is-invalid]="invalidName">
+                        <small class="text-danger" *ngIf="invalidName">Nombre o razón social muy corto</small>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="identity_document_id" formControlName="identity_document_id" placeholder="Tipo de documento">
+                            <option value="{{ docs.id }}" *ngFor="let docs of documents">{{ docs.document_name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="dni" formControlName="dni" placeholder="Documento sin digito de verificación"
+                        inputmode="numeric" autocomplete="off" [class.is-invalid]="invalidDni">
+                        <small class="text-danger" *ngIf="invalidDni">Número de documento incorrecto</small>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="type_organization_id" formControlName="type_organization_id" placeholder="ipo de contribuyente">
+                            <option [value]="org.id" *ngFor="let org of organizations" >{{ org.description }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="tax_regime_id" formControlName="tax_regime_id" placeholder="Régimen contable">
+                            <option [value]="regime.id" *ngFor="let regime of regime">{{ regime.description }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="tax_level_id" formControlName="tax_level_id" placeholder="Tipo de responsabilidad">
+                            <option [value]="level.id" *ngFor="let level of level">{{ level.description }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="mobile" formControlName="mobile" placeholder="Telefono de contacto"
+                        autocomplete="on" inputmode="tel" [class.is-invalid]="invalidMobile">
+                        <small class="text-danger" *ngIf="invalidMobile">Numero de teléfono muy corto</small>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="address" formControlName="address" placeholder="Dirección"
+                            autocomplete="on" [class.is-invalid]="invalidAdress">
+                         <small class="text-danger" *ngIf="invalidAdress">Dirección muy corta</small>
+                    </div>
+                    <!-- <div class="form-group">
+                        <input class="form-control" type="text" name="postal_code" formControlName="postal_code" placeholder="Código postal" inputmode="numeric" autocomplete="on">
+                    </div> -->
+                    <div class="form-group">
+                        <select class="selectpicker form-control" data-live-search="true" name="city_id" formControlName="city_id" placeholder="Ciudad o municipio">
+                            <option [value]="city.id" *ngFor="let city of cities" >{{ city.name_city }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" formControlName="email" placeholder="Correo electrónico"
+                        inputmode="email" autocomplete="off" [class.is-invalid]="invalidEmail">
+                        <small class="text-danger" *ngIf="invalidEmail">Correo electrónico incorrecto</small>>
+                    </div>
+                    <!-- <div class="form-group">
+                        <input class="form-control" type="text" name="merchant_registration" formControlName="merchant_registration" placeholder="Matricula mecantíl">
+                    </div> -->
+                    <div class="form-group">
+                        <button class="btn btn-info btn-block border rounded" type="submit">
+                          <span> Enviar </span>
+                          <!-- <span *ngIf="sendFormVal"  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"> </span>
+                          <span *ngIf="sendFormVal"> Enviando... </span> -->
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="caracst">
+    <div style="padding: 30px 0px;background-color: #ffffff;color: rgb(35,35,35);">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-12 col-lg-6" data-aos="fade-left">
+                    <h4 style="color: rgb(6,6,6);font-size: 16px;"><strong>CARACTERÍSTICAS DE NUESTRA&nbsp;API REST</strong><br></h4>
+                    <p>
+                      <ul>
+                      <li>Emite los documentos sin intermediarios ni proveedores tecnológicos, con validación directa con la DIAN.</li>
+                      <li>Factura de venta nacional.</li>
+                      <li>Factura por contingencia tipo 03 y 04.</li>
+                      <li>Firma de documentos XML UBL2.1.</li>
+                      <li>Notas débito y crédito.</li>
+                      <li>Application response.</li>
+                      <li>Attach document.</li>
+                      <li>Recepción de mensajes sobre rechazo o aceptación del documento emitido.</li>
+                      <li>Integración con cualquier Software (Web, Escritorio, Móvil).</li>
+                      <li>Soporte y actualizaciones.</li>
+                      <li>Envío de los documentos al email del receptor o cliente.</li>
+                      <li>Registro de clientes.</li>
+                      <li>Representación gráfica de la factura y notas débito y crédito.</li>
+                      <li>Consulta y verificación del digito de verificación.</li>
+                      <li>Documentación para uso y consumo del api.</li>
+                      <li>Interfaz web para consulta y administración de documentos y usuarios.</li>
+                      <li>Almacenamiento en la nube desde 1 GB.</li>
+                      </ul>
+                    <!-- </p> -->
+                </div>
+                <div class="col col-sm-12 col-lg-6">
+                    <div class="border-danger d-inline d-lg-flex" id="div-full"><img data-aos="fade-right" data-aos-delay="50" src="assets/img/api%20rest.jpg?h=c2ff303ba1c5f09a9d651cf6c4c89bf5" style="margin-top: auto;margin-bottom: auto;" width="100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section id="contact" class="content-section text-center" style="background-color: #c53d02;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Contacto</h2>
+                <p>Si tiene dudas con respecto a uso de nuestra API o desea un asesoria personalizada, no dude en comunicarse por medio de los siguientes correos.</p>
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">ventas@matias-api.com.co</label></div>
+                        </div>
+                        <div class="col">
+                            <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">soporte@matias-api.com.co</label></div>
+                        </div>
+                    </div>
+                      <div class="row">
+                          <div class="col">
+                              <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">Fijo: 307-3388. Cel: 301-620-9737</label></div>
+                          </div>
+                          <div class="col">
+                              <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">Cel: 310-843-5431</label></div>
+                          </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div><i class="fas fa-map-marked-alt"></i><label style="padding: 5px;">Carrera 7 Nº. 156-68 Piso 11 North Point Towers Torre 3 oficina 1103. Bogotá D.C</label></div>
+            </div>
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>

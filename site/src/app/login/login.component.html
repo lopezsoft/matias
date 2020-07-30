@@ -1,0 +1,37 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <form autocomplete="off" class="shadow-lg" id="login-form" (ngSubmit)="onSave()" [formGroup]="loginForm">
+            <div class="illustration" style="padding: 5px;"><i class="fas fa-user-lock"></i></div>
+            <div class="form-group text-center">
+                <label style="font-size: 24px;color: rgb(4, 34, 112);">
+                  <strong>Formulario de inicio de sesión</strong>
+                </label>
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" name="email" formControlName="email" placeholder="Nombre de usuario"
+              inputmode="email" autocomplete="off" [class.is-invalid]="invalidEmail">
+              <small class="text-danger" *ngIf="invalidEmail">Correo electrónico incorrecto</small>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" formControlName="password"
+                    placeholder="Contraseña" autocomplete="off"
+                    [class.is-invalid]="invalidPass">
+                    <small class="text-danger" *ngIf="invalidEmail">Contraseña en blanco</small>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="remember_me" name="remember_me" formControlName="remember_me">
+              <label style="color: rgb(4, 34, 112);" for="remember_me"> Recuérdame</label><br>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger btn-block border rounded" type="submit">
+                  <span> Iniciar sesión </span>
+                </button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<router-outlet></router-outlet>
