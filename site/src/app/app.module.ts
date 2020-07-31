@@ -20,8 +20,11 @@ import { IdentityDocumentsService } from './services/identity-documents.service'
 import { TypeOrganizationService } from './services/type-organization.service';
 import { TaxRegimeService } from './services/tax-regime.service';
 import { TaxLevelService } from './services/tax-level.service';
-import { LoginComponent } from './login/login.component';
+import { PlanesComponent } from './planes/planes.component';
 import { HomeComponent } from './home/home.component';
+import { CaracteristicasComponent } from './caracteristicas/caracteristicas.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
    declarations: [
@@ -29,8 +32,11 @@ import { HomeComponent } from './home/home.component';
       FooterComponent,
       HeaderComponent,
       BodyComponent,
-      LoginComponent,
-      HomeComponent
+      PlanesComponent,
+      HomeComponent,
+      CaracteristicasComponent,
+      NosotrosComponent,
+      ContactoComponent
    ],
    imports: [
       BrowserModule,

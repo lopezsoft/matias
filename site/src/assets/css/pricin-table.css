@@ -1,0 +1,133 @@
+.pricing-item {
+  width: 328px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(82, 81, 81, 0.452);
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  padding-bottom: 20px;
+  margin: auto;
+}
+
+.pricing-item .header-table {
+  height: 128px;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  line-height: 27px;
+}
+
+.pricing-item .standar-red {
+  background-color: #C00000;
+}
+
+.pricing-item .standar-triangle-red {
+  width: 0;
+  height: 0;
+  border-left: 164px solid transparent;
+  border-right: 164px solid transparent;
+  border-top: 64px solid #C00000;
+  border-bottom: 5px solid transparent;
+}
+
+.pricing-item .standar {
+  background-color: #17375E;
+}
+
+.pricing-item .standar-triangle {
+  width: 0;
+  height: 0;
+  border-left: 164px solid transparent;
+  border-right: 164px solid transparent;
+  border-top: 64px solid #17375E;
+  border-bottom: 5px solid transparent;
+}
+
+.pricing-item .full-purple {
+  background-color: #403152;
+}
+
+.pricing-item .full-triangle-purple {
+  width: 0;
+  height: 0;
+  border-left: 164px solid transparent;
+  border-right: 164px solid transparent;
+  border-top: 64px solid #403152;
+  border-bottom: 5px solid transparent;
+}
+
+.pricing-item .full {
+  background-color: #E46C0A;
+}
+
+.pricing-item .full-triangle {
+  width: 0;
+  height: 0;
+  border-left: 164px solid transparent;
+  border-right: 164px solid transparent;
+  border-top: 64px solid #E46C0A;
+  border-bottom: 5px solid transparent;
+}
+
+.pricing-item .header-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Arial, Times New Roman, Helvetica';
+  font-size: 34px;
+}
+
+.pricing-item .header-payment-year {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.pricing-item .header-payment-month {
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.pricing-item .list {
+  padding: 10px;
+}
+
+.pricing-item .list-items {
+  color: #0070C0;
+  font-size: 14px !important;
+  font-weight: bold;
+  font-family: 'Arial';
+}
+
+.pricing-item .list .red {
+  color: #C00000 !important;
+}
+
+.pricing-item .list .purple {
+  color: #403152 !important;
+}
+
+.pricing-item .list .certificate {
+  color: #10c000 !important;
+  font-size: 20px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pricing-item .list .no-certificate {
+  color: rgb(255, 30, 0) !important;
+  font-size: 20px !important;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.pricing-item .list .no-certificate::before {
+  font-family: FontAwesome;
+  content: '\f00d';
+}
+
+.pricing-item .list-items::before {
+  font-family: FontAwesome;
+  content: '\f00c';
+}
+

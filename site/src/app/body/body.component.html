@@ -1,174 +1,200 @@
-<section id="about" class="content-section text-center blue-color">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto" data-aos="fade-right">
-                <h2><strong>¿Qué es la Factura Electrónica?</strong><br></h2>
-                <p>Es, ante todo, una factura.<br>Esto significa que tiene los mismos efectos legales que una factura en<br>papel, se expide y recibe en formato electrónico, en otras palabras, es un<br>documento que soporta transacciones de venta de
-                    bienes y/o servicios y que operativamente tienen lugar a través de sistemas computacionales y/o soluciones&nbsp; informáticas permitiendo el cumplimiento de las características y condiciones&nbsp;en relación con la expedición,
-                    recibo, rechazo y conservación.<br></p>
-            </div>
-        </div>
-    </div>
-  </section>
-  <section id="about" class="content-section text-center back backgorund-img-section" style="background-color: #050e5f;opacity: 1;padding: 0px;">
-    <div class="background-container">
-        <div class="container">
-            <div class="row">
-                <div class="col col-lg-8 mx-auto">
-                    <h2 data-aos="fade-right" style="font-size: 24px;">&nbsp;<strong>¿Qué&nbsp;es la Factura Electrónica con validación previa a su expedición?</strong><br></h2>
-                    <p data-aos="fade-left" class="justify-ext">En esta modalidad el facturador envía el&nbsp;documento electrónico a la DIAN y en tiempo real recibe la factura validada por&nbsp;la entidad para ser entregada al adquirente.<br><br>&nbsp;La factura electrónica sólo se entenderá
-                        expedida cuando sea validada y&nbsp;entregada al adquirente. El modelo de validación previa permite verificar los&nbsp;requisitos fiscales de una <strong>Factura Electrónica</strong>, que garantiza a los&nbsp;facturadores y
-                        adquirentes los efectos tributarios. Las reglas y validaciones, pueden<br>consultarse en la <strong>Resolución 000001 enero 3 de 2019</strong>.<br><br><br><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-  <section id="register" class="download-section content-section text-center" style="background-image: url(&quot;assets/img/18084-1920.jpg?h=da0564ab93bea4446e5da9e1e5cd480a&quot;);padding: 0px;">
-    <div data-aos="fade-right" style="padding: 50px 0px;background-color: rgba(255,255,255,0.34);">
-        <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <h1 class="border rounded shadow-lg d-lg-flex justify-content-lg-center align-items-lg-center" style="font-size: 20px;background-color: rgba(255,255,255,0.88);color: rgb(0,85,249);height: 72px;">pruebe nuestra api completamente gratis y sin compromiso</h1>
-
-                <form autocomplete="off" class="shadow-lg" id="form-register" (ngSubmit)="onSave()" [formGroup]="myForm">
-                    <div class="form-group">
-                        <label style="font-size: 24px;color: rgb(30,82,217);"><strong>Formulario de registro</strong></label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="company_name" formControlName="company_name"
-                            placeholder="Nombre o razón social" autocomplete="off"
-                            [class.is-invalid]="invalidName">
-                        <small class="text-danger" *ngIf="invalidName">Nombre o razón social muy corto</small>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="identity_document_id" formControlName="identity_document_id" placeholder="Tipo de documento">
-                            <option value="{{ docs.id }}" *ngFor="let docs of documents">{{ docs.document_name }}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="dni" formControlName="dni" placeholder="Documento sin digito de verificación"
-                        inputmode="numeric" autocomplete="off" [class.is-invalid]="invalidDni">
-                        <small class="text-danger" *ngIf="invalidDni">Número de documento incorrecto</small>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="type_organization_id" formControlName="type_organization_id" placeholder="ipo de contribuyente">
-                            <option [value]="org.id" *ngFor="let org of organizations" >{{ org.description }}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="tax_regime_id" formControlName="tax_regime_id" placeholder="Régimen contable">
-                            <option [value]="regime.id" *ngFor="let regime of regime">{{ regime.description }}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="tax_level_id" formControlName="tax_level_id" placeholder="Tipo de responsabilidad">
-                            <option [value]="level.id" *ngFor="let level of level">{{ level.description }}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="mobile" formControlName="mobile" placeholder="Telefono de contacto"
-                        autocomplete="on" inputmode="tel" [class.is-invalid]="invalidMobile">
-                        <small class="text-danger" *ngIf="invalidMobile">Numero de teléfono muy corto</small>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="address" formControlName="address" placeholder="Dirección"
-                            autocomplete="on" [class.is-invalid]="invalidAdress">
-                         <small class="text-danger" *ngIf="invalidAdress">Dirección muy corta</small>
-                    </div>
-                    <!-- <div class="form-group">
-                        <input class="form-control" type="text" name="postal_code" formControlName="postal_code" placeholder="Código postal" inputmode="numeric" autocomplete="on">
-                    </div> -->
-                    <div class="form-group">
-                        <select class="selectpicker form-control" data-live-search="true" name="city_id" formControlName="city_id" placeholder="Ciudad o municipio">
-                            <option [value]="city.id" *ngFor="let city of cities" >{{ city.name_city }}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="email" name="email" formControlName="email" placeholder="Correo electrónico"
-                        inputmode="email" autocomplete="off" [class.is-invalid]="invalidEmail">
-                        <small class="text-danger" *ngIf="invalidEmail">Correo electrónico incorrecto</small>>
-                    </div>
-                    <!-- <div class="form-group">
-                        <input class="form-control" type="text" name="merchant_registration" formControlName="merchant_registration" placeholder="Matricula mecantíl">
-                    </div> -->
-                    <div class="form-group">
-                        <button class="btn btn-info btn-block border rounded" type="submit">
-                          <span> Enviar </span>
-                          <!-- <span *ngIf="sendFormVal"  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"> </span>
-                          <span *ngIf="sendFormVal"> Enviando... </span> -->
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-  </section>
-  <section id="caracst">
-    <div style="padding: 30px 0px;background-color: #ffffff;color: rgb(35,35,35);">
-        <div class="container">
-            <div class="row">
-                <div class="col col-sm-12 col-lg-6" data-aos="fade-left">
-                    <h4 style="color: rgb(6,6,6);font-size: 16px;"><strong>CARACTERÍSTICAS DE NUESTRA&nbsp;API REST</strong><br></h4>
-                    <p>
-                      <ul>
-                      <li>Emite los documentos sin intermediarios ni proveedores tecnológicos, con validación directa con la DIAN.</li>
-                      <li>Factura de venta nacional.</li>
-                      <li>Factura por contingencia tipo 03 y 04.</li>
-                      <li>Firma de documentos XML UBL2.1.</li>
-                      <li>Notas débito y crédito.</li>
-                      <li>Application response.</li>
-                      <li>Attach document.</li>
-                      <li>Recepción de mensajes sobre rechazo o aceptación del documento emitido.</li>
-                      <li>Integración con cualquier Software (Web, Escritorio, Móvil).</li>
-                      <li>Soporte y actualizaciones.</li>
-                      <li>Envío de los documentos al email del receptor o cliente.</li>
-                      <li>Registro de clientes.</li>
-                      <li>Representación gráfica de la factura y notas débito y crédito.</li>
-                      <li>Consulta y verificación del digito de verificación.</li>
-                      <li>Documentación para uso y consumo del api.</li>
-                      <li>Interfaz web para consulta y administración de documentos y usuarios.</li>
-                      <li>Almacenamiento en la nube desde 1 GB.</li>
-                      </ul>
-                    <!-- </p> -->
-                </div>
-                <div class="col col-sm-12 col-lg-6">
-                    <div class="border-danger d-inline d-lg-flex" id="div-full"><img data-aos="fade-right" data-aos-delay="50" src="assets/img/api%20rest.jpg?h=c2ff303ba1c5f09a9d651cf6c4c89bf5" style="margin-top: auto;margin-bottom: auto;" width="100%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-  <section id="contact" class="content-section text-center" style="background-color: #c53d02;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2>Contacto</h2>
-                <p>Si tiene dudas con respecto a uso de nuestra API o desea un asesoria personalizada, no dude en comunicarse por medio de los siguientes correos.</p>
-                <div>
-                    <div class="row">
-                        <div class="col">
-                            <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">ventas@matias-api.com.co</label></div>
-                        </div>
-                        <div class="col">
-                            <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">soporte@matias-api.com.co</label></div>
-                        </div>
-                    </div>
-                      <div class="row">
-                          <div class="col">
-                              <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">Fijo: 307-3388. Cel: 301-620-9737</label></div>
+<main class="page landing-page">
+   <!-- Start: Social Menu Sticky -->
+   <div id="fixed-social">
+      <div><a class="fixed-facebook" href="https://www.facebook.com/lopezsoft.co/" target="_blank"><i class="fab fa-facebook-f"></i><span>&nbsp;Facebook</span></a></div>
+      <div><a class="fixed-wathsapp" href="https://api.whatsapp.com/send?phone=573016209737&amp;data=AbudydJ8bPEoxAMSIJSERVIIjKGkoRlKaNvcJfZ-mAZFKMePlW3VQiCRugrWIbyolS60p5mw4NlR8tpeZBsfRWiYWyS69JyIlwutgqVeG353nnQ2VmuxBxVqAEzMxhMX0Vg&amp;source=FB_Ads"
+              target="_blank"><i class="fab fa-whatsapp"></i><span>&nbsp;Wathsapp</span></a></div>
+  </div>
+  <!-- End: Social Menu Sticky -->
+  <section id="home" data-aos="fade-up" class="clean-block clean-hero full-height" style="color: rgba(5, 5, 5, 0.904);background: url(assets/img/matias-factura-electronica.jpg?h=546a47bc8d018c25d25e4d9ca0370def) center / cover;">
+      <div class="text" style="max-width: 100%;">
+          <div class="row">
+              <div class="col col-12 col-sm-12 col-md-7" style="padding-top: 10px;padding-bottom: 10px;">
+                  <div style="padding: 5px;">
+                      <h2 class="pulse animated text-center"><strong>FACTURACIÓN&nbsp;</strong><br><strong>ELECTRÓNICA COLOMBIA</strong><br></h2>
+                      <p class="lead text-justify" data-aos="fade-right" data-aos-duration="50" data-aos-delay="100" data-aos-once="true">Envíe sus documentos electrónicos&nbsp; a la DIAN de forma fácil y segura.<br></p>
+                      <h3 class="text-left pulse animated" style="color: rgb(255,255,255);text-shadow: 0px 0px 2px rgb(255,255,255);border-color: rgb(82,49,25);font-size: 41px;"><strong>SOFTWARE PROPIO</strong></h3>
+                      <ul class="list-unstyled fa-ul" data-aos="fade-right" data-aos-duration="300" data-aos-delay="300" data-aos-once="true">
+                          <li class="text-left"><i class="fa fa-check-square-o fa-li" style="color: #ffffff;"></i>Hacemos el proceso de habilitación ante la <strong>DIAN </strong>completamente <strong><em>GRATIS</em></strong>.</li>
+                          <li class="text-left"><i class="fa fa-check-square-o fa-li" style="color: #ffffff;"></i><strong>APP Móvil</strong></li>
+                          <li class="text-left"><i class="fa fa-check-square-o fa-li" style="color: #ffffff;"></i>Disponible <strong>24/7</strong></li>
+                          <li class="text-left"><i class="fa fa-check-square-o fa-li" style="color: #ffffff;"></i>Soporte técnico y asesoría personalizada</li>
+                          <li class="text-left"><i class="fa fa-check-square-o fa-li" style="color: #ffffff;"></i>Cursos virtuales certificados&nbsp;en SG-SST&nbsp; hasta para 20 personas<br></li>
+                          <li class="text-left"><i class="fa fa-check-square-o fa-li" style="color: #ffffff;"></i><strong>Certificado de firma digital</strong></li>
+                      </ul><a class="btn btn-success btn-lg" role="button" href="https://www.dian.gov.co/impuestos/factura-electronica/Documents/Calendario-FE-2020.pdf" target="_blank" style="border-radius: 28px;">Calendario DIAN</a></div>
+              </div>
+              <div class="col col-12 col-sm-12 col-md-5">
+                  <div>
+                      <form class="flash animated" id="form"  (ngSubmit)="onSave()" [formGroup]="myForm">
+                          <h1 class="text-break text-center" style="font-size: 58px;padding-bottom: 30px;"><strong>¡¡¡Inicia ya!!!</strong><br></h1>
+                          <div class="form-group">
+                            <input class="form-control" type="text" name="username" placeholder="Ingrese su nombre y apellidos" required=""
+                            formControlName ="username" [class.is-invalid]="invalidUserName">
+                            <!-- <small class="text-danger" *ngIf="invalidUserName">Ingrese su nombre y apellidos</small> -->
                           </div>
-                          <div class="col">
-                              <div><i class="icon ion-android-mail"></i><label style="padding: 5px;">Cel: 310-843-5431</label></div>
+                          <div class="form-group">
+                            <input class="form-control" type="text" required="" name="company" placeholder="Nombre de la empresa"
+                            formControlName="company" [class.is-invalid]="invalidCompany">
+                            <!-- <small class="text-danger" *ngIf="invalidCompany">Ingrese el nomnbre de la empresa</small> -->
+                          </div>
+                          <div class="form-group">
+                            <input class="form-control" type="text" name="email" placeholder="Correo electrónico" required="" inputmode="email"
+                            formControlName="email" [class.is-invalid]="invalidEmail">
+                            <!-- <small class="text-danger" *ngIf="invalidEmail">Ingrese el correo electrónico</small> -->
+                          </div>
+                          <div class="form-group">
+                            <input class="form-control" type="text" name="mobile" placeholder="Teléfono celular" required="" inputmode="numeric"
+                            formControlName="mobile" [class.is-invalid]="invalidMobile">
+                            <!-- <small class="text-danger" *ngIf="invalidMobile">Ingrese un teléfono celular</small> -->
+                          </div>
+                          <button class="btn btn-info btn-block btn-lg" type="submit" style="border-radius: 28px;">
+                            <strong>Iniciar ahora</strong><i class="fa fa-check" style="text-align: left;padding-left: 10px;"></i>
+                          </button>
+                          <label
+                              style="padding: 15px;font-size: 12px;">Al enviar sus datos, manifiesta estar de acuerdo con nuestra
+                              <a href="assets/docs/Protección de datos personales.pdf" target="_blank"><strong>política de protección de datos.</strong></a></label>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section style="background-color: #ffffff;">
+      <div style="padding: 20px;">
+        <h2 class="text-center">Planes desde <span class="text-orange bold">$ 22.000</span> mensuales.</h2>
+      </div>
+      <div class="d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 450px;margin: auto;padding: 20px;">
+        <a class="btn btn-warning btn-lg" [routerLink]="['/planes']" role="button" style="border-radius: 28px;">Ver planes</a>
+      </div>
+  </section>
+  <section class="section-blue">
+      <div class="container">
+          <section class="index-howto-alt py-3" style="color: rgb(255,255,255);">
+              <div class="container">
+                  <h2 class="text-center mb-3">¿Por qué elegirnos?</h2>
+                  <div class="psd-line pos-rel" style="position:relative;">
+                      <div class="row align-items-center">
+                          <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-1 p-5"><img class="howto-img" src="assets/img/matias-desarrollo-integral.png?h=b09778a0c1cfffe7ed97295f32f63231">
+                              <!-- <h2 class="grey-text d-none">Üyelik Tipini Seçerek Kayıt Olun</h2> -->
+                          </div>
+                          <div class="col-12 col-sm-6 d-flex flex-column justify-content-center p-5 psd-left1">
+                              <p class="m-0 text-center text-sm-left">Hemos desarrollado una solución, sencilla pero potente, que le permitirá llevar su negocio a otro nivel. Nuestra solución es ideal para:<strong> Profesionales independientes, empresas de servicios, </strong>micro empresas
+                                  o pymes que quieran llevar su control de <strong>inventarios y sistema pos </strong>a la nube.</p>
                           </div>
                       </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div><i class="fas fa-map-marked-alt"></i><label style="padding: 5px;">Carrera 7 Nº. 156-68 Piso 11 North Point Towers Torre 3 oficina 1103. Bogotá D.C</label></div>
-            </div>
-        </div>
-    </div>
-</section>
+                      <div class="row flex-column-reverse align-items-center flex-sm-row">
+                          <div class="col-12 col-sm-6 d-flex flex-column justify-content-center p-5 psd-right1">
+                              <p class="m-0 text-center text-sm-right">Generación de reportes y estadísticas en tiempo real y en múltiples formatos (<br><strong>Word, Excel, PowerPoint y PDF</strong>).&nbsp;<br></p>
+                          </div>
+                          <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-2 p-5"><img class="howto-img" src="assets/img/matias-reports.png?h=2ede5eb1a8d678c9a3b8d5979e9d7641">
+                              <!-- <h2 class="grey-text d-none">Neye İhtiyacınız Varsa Belirtin</h2> -->
+                          </div>
+                      </div>
+                      <div class="row flex-column-reverse align-items-center flex-sm-row">
+                          <div class="col-12 col-sm-6 d-flex flex-column justify-content-center p-5 psd-right2">
+                              <p class="m-0 text-center text-sm-right">Evite retrasos con la implementación de la facturación electrónica, nosotros nos encargamos de todo el proceso de implementación y <strong>habilitación ante la DIA</strong>N y del proceso de <strong>emisión del Certificado </strong>de
+                                  firma digital por <strong>Certicamara</strong>.<br></p>
+                          </div>
+                          <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-4 p-5"><img class="howto-img" src="assets/img/matias-firma-digitla-factura-electronica.png?h=ee63a407e02a15515e68672259eb6eee"></div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </section>
+  <section class="clean-block features" style="background-color: #b02088;">
+      <div class="container">
+          <h3 style="color: rgb(255,255,255);text-align: center;margin: auto;padding-top: 20px;padding-bottom: 20px;">Software en la nube para <strong>facturación electrónica</strong>, control de inventarios, sistema pos, compras, proveedores, Etc. Todo integrado en una solo herramienta.</h3>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col col-12 col-sm-12 col-xs-4 col-md-4">
+                  <div class="card thum-purple"><img class="card-img-top w-100 d-block" src="assets/img/matias-inventarios.png?h=85d7bf4fee68654b636a065a402c9c8f">
+                      <div class="card-body">
+                          <h5 class="text-center card-title"><strong>Control de inventarios</strong></h5>
+                          <p class="card-text">Potencie el control de existencias de su negocio, evite perdida de mercancía, <strong>control de caducidades</strong>, control de<strong> productos, categorías o familias</strong> de productos, <strong>marcas, unidades de medida</strong>.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col col-12 col-sm-12 col-xs-4 col-md-4">
+                  <div class="card thum-purple"><img class="card-img-top w-100 d-block" src="assets/img/matias-transaction-factura-electronica.png?h=ec821a241d60719b236208824ecfeb59">
+                      <div class="card-body">
+                          <h5 class="card-title"><strong>Facturación electrónica</strong></h5>
+                          <p class="card-text">Cumpla con todas las <strong>exigencias de la DIAN</strong> en el envío de los documentos electrónicos. envíe <strong>Facturas electrónicas, notas débito y crédito, facturas por contingencia, </strong>correos a sus clientes.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col col-12 col-sm-12 col-xs-4 col-md-4">
+                  <div class="card thum-purple"><img class="card-img-top w-100 d-block" src="assets/img/matias-sistema.pos.png?h=dc7f4e5baa2593ba3361757af1f30206">
+                      <div class="card-body">
+                          <h5 class="card-title"><strong>Sistema pos</strong></h5>
+                          <p class="card-text">Maneje su punto de venta de forma ágil y sencilla, monitorización en tiempo real, apertura, cuadre y cierre de cajas desde cualquier lugar.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="clean-block features full-height" style="background: url(assets/img/matias-app-movil.jpg?h=0c3eb4c93cb495b1675a82e0e149174f) center / cover">
+      <div class="container" style="background-color: rgba(255,255,255,0.67);">
+          <h3 class="text-blue text-center" style="padding-top: 30px;padding-bottom: 20px;">Próximamente desde su móvil podrá hacer:&nbsp;<strong>facturación electrónica</strong>, control de inventarios, reportes y estadísticas, compras, proveedores.</h3>
+      </div>
+  </section>
+  <section style="background: url(assets/img/matias-direccion-bogota.jpg?h=c04ff1b71c658190d29de8f15e61fc0c) center / cover;">
+      <div style="background-color: rgba(4,3,3,0.81);" class="full-height">
+          <div class="container">
+              <div class="row" style="margin-left: 0px;margin-right: 0px;padding: 10px;padding-top: 100px;">
+                  <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <tbody style="color: rgb(255,255,255);">
+                                  <tr>
+                                      <td><i class="fa fa-building"></i></td>
+                                      <td>Carrera 7 Nº. 156-68 Piso 11&nbsp;North Point Towers Torre 3 oficina 1103.<br></td>
+                                  </tr>
+                                  <tr>
+                                      <td><i class="fa fa-map-marker"></i></td>
+                                      <td>Bogotá D.C Colombia, Oficina comercial.</td>
+                                  </tr>
+                                  <tr>
+                                      <td><i class="fa fa-phone"></i></td>
+                                      <td><strong>Fijo</strong>: (57) (1) 307-3388. <strong>Cel</strong>: (57) 301-620-9737<br></td>
+                                  </tr>
+                                  <tr>
+                                      <td><i class="fa fa-envelope"></i></td>
+                                      <td>ventas@matias-api.com.co<br></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                  <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <tbody style="color: rgb(255,255,255);">
+                                  <tr>
+                                      <td><i class="fa fa-building"></i></td>
+                                      <td>Cra 15 #57-38, Santa Teresita.</td>
+                                  </tr>
+                                  <tr>
+                                      <td><i class="fa fa-map-marker"></i></td>
+                                      <td>Dosquebradas Risaralda Colombia</td>
+                                  </tr>
+                                  <tr>
+                                      <td><i class="fa fa-phone"></i></td>
+                                      <td><strong>Fijo</strong>: (57) (6) 342-3070&nbsp;<strong>Cel</strong>: (57) 310-843-5431<br></td>
+                                  </tr>
+                                  <tr>
+                                      <td><i class="fa fa-envelope"></i></td>
+                                      <td>soporte@matias-api.com.co<br></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</main>
 <router-outlet></router-outlet>

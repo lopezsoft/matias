@@ -1,0 +1,172 @@
+.text-red {
+  color: #C00000 !important;
+}
+
+.text-orange {
+  color: rgb(255, 30, 0) !important;
+}
+
+.text-purple {
+  color: #403152 !important;
+}
+
+.text-green {
+  color: #10c000 !important;
+}
+
+.text-blue {
+  color: #0070C0 !important;
+}
+
+.text-orange .bold {
+  font-weight: bold;
+}
+
+.section-orange {
+  background-color: rgb(190, 25, 3);
+}
+
+.section-blue {
+  background-color: #0070C0;
+}
+
+.section-purple {
+  background-color: #b02088;
+  color: white;
+}
+
+.thum-purple {
+  background-color: #a768957a;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  height: 450px;
+}
+
+.thum-purple img {
+  width: 128px !important;
+  height: 128px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.items-check {
+  padding: 10px;
+}
+
+.items-check .list-blue {
+  color: #0070C0;
+  font-size: 14px !important;
+  font-weight: bold;
+  font-family: 'Arial';
+}
+
+.items-check .list {
+  color: white;
+  font-size: 16px !important;
+  font-family: 'Arial';
+}
+
+.items-check .list::before {
+  font-family: FontAwesome;
+  content: '\f00c';
+}
+
+
+
+#fixed-social {
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 290px
+}
+
+#fixed-social a {
+  color: #fff;
+  display: block;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  margin-bottom: 1px;
+  z-index: 1
+}
+
+#fixed-social a:hover>span {
+  visibility: visible;
+  left: 41px;
+  opacity: 1
+}
+
+#fixed-social a span {
+  line-height: 40px;
+  left: 60px;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  visibility: hidden;
+  transition-duration: .5s;
+  z-index: 1;
+  opacity: 0;
+  font-family: Montserrat;
+  font-weight: 700
+}
+
+.fixed-wathsapp,
+.fixed-wathsapp span {
+  background-color: #00e513
+}
+
+.fixed-facebook,
+.fixed-facebook span {
+  background-color: #00aae5
+}
+
+.fixed-twitter,
+.fixed-twitter span {
+  background-color: #1a91da
+}
+
+.fixed-linkedin,
+.fixed-linkedin span {
+  background-color: #0077b5
+}
+
+.fixed-instagram,
+.fixed-instagram span {
+  background-color: #ed2b29
+}
+
+.fixed-youtube,
+.fixed-youtube span {
+  background-color: red
+}
+
+
+.padding-10 {
+  padding: 10px;
+}
+
+/* MEDIA QUERYS */
+
+@media (min-width: 576px) {
+  .full-height {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .hidde-img {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.icons i {
+  font-size: 32px;
+  padding: 5px;
+  color: white;
+}
+

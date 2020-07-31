@@ -1,6 +1,12 @@
-<footer class="blue-color">
-    <div class="container text-center">
-        <p>Copyright © LOPEZSOFT S.A.S 2020</p>
-    </div>
-</footer>
+<div class="footer-basic">
+  <footer>
+      <ul class="list-inline text-blue">
+          <li class="list-inline-item"><a [routerLink]="['/']">Inicio</a></li>
+          <li class="list-inline-item"><a [routerLink]="['/planes']">Planes</a></li>
+          <li class="list-inline-item"><a href="assets/docs/Protección de datos personales.pdf" target="_blank">Tratamiento datos</a></li>
+          <li class="list-inline-item"><a href="assets/docs/Politica de privacidad.pdf" target="_blank">Política de privacidad</a></li>
+      </ul>
+      <p class="copyright text-blue"><strong>LOPEZSOFT S.A.S © 2020</strong> </p>
+  </footer>
+</div>
 <router-outlet></router-outlet>
