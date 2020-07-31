@@ -1,0 +1,46 @@
+<app-header></app-header>
+<main class="page contact-us-page">
+  <section class="clean-block section-purple" style="padding-top: 50px">
+      <div class="container">
+          <div class="block-heading">
+              <h1><strong>Contáctenos...</strong></h1>
+              <p style="max-width: 550px;"><strong>Si tiene dudas con respecto a uso de nuestra APP o desea un asesoría personalizada, no dude en comunicarse por medio del siguiente formulario.</strong><br></p>
+          </div>
+          <form class="flash animated contact-form" (ngSubmit)="onSave()" [formGroup]="contactForm">
+            <h1 class="text-break text-center" style="font-size: 27px;padding-bottom: 30px;"><strong>Envíenos&nbsp;sus inquietudes.</strong></h1>
+            <div class="form-group">
+              <input class="form-control" type="text" name="username" placeholder="Ingrese su nombre y apellidos" required=""
+              formControlName ="username" [class.is-invalid]="invalidUserName">
+              <!-- <small class="text-danger" *ngIf="invalidUserName">Ingrese su nombre y apellidos</small> -->
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" required="" name="company" placeholder="Nombre de la empresa"
+              formControlName="company" [class.is-invalid]="invalidCompany">
+              <!-- <small class="text-danger" *ngIf="invalidCompany">Ingrese el nomnbre de la empresa</small> -->
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="email" placeholder="Correo electrónico" required="" inputmode="email"
+              formControlName="email" [class.is-invalid]="invalidEmail">
+              <!-- <small class="text-danger" *ngIf="invalidEmail">Ingrese el correo electrónico</small> -->
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="mobile" placeholder="Teléfono celular" required="" inputmode="numeric"
+              formControlName="mobile" [class.is-invalid]="invalidMobile">
+              <!-- <small class="text-danger" *ngIf="invalidMobile">Ingrese un teléfono celular</small> -->
+            </div>
+            <div class="form-group">
+              <textarea class="form-control form-control-lg" placeholder="Mensaje" name="message" required minlength="30"
+              formControlName="message" [class.is-invalid] ="invalidMessage"></textarea>
+            </div>
+            <button class="btn btn-info btn-block btn-lg" type="submit" style="border-radius: 28px;">
+              <strong>Enviar</strong><i class="fa fa-check" style="text-align: left;padding-left: 10px;"></i>
+            </button>
+            <label
+                style="padding: 15px;font-size: 12px;">Al enviar sus datos, manifiesta estar de acuerdo con nuestra
+                <a href="assets/docs/Protección de datos personales.pdf" target="_blank"><strong>política de protección de datos.</strong></a></label>
+          </form>
+      </div>
+  </section>
+</main>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

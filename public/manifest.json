@@ -1,0 +1,15 @@
+{
+    "short_name": "MatiasAPP - Facturación electrónica sin limites - Inventarios - Sistema pos",
+    "name": "MatiasAP",
+    "icons": [{
+        "src": "/assets/img/brand/matias-app-256.png?h=003f14f425c7a6b889a3bb0098ed5614",
+        "type": "image/png",
+        "sizes": "256x256"
+    }, {
+        "src": "/assets/img/brand/matias-app-512.png?h=ae4ad8f2ded076a9a36619b2716fd8f3",
+        "type": "image/png",
+        "sizes": "512x512"
+    }],
+    "start_url": "/",
+    "display": "browser"
+}
